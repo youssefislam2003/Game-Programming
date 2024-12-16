@@ -1,2 +1,0 @@
-# Game Programming
- Programming Project
