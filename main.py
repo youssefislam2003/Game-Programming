@@ -34,8 +34,19 @@ def loadIMG(name, size):
     else:
         return None
     
-    def createPlaceholder(size, color):
+def createPlaceholder(size, color):
         surface = pg.Surface(size)
         surface.fill(color)
         return surface 
     
+bgIMG = loadIMG('bg.png', (WIN_W, WIN_H)) or createPlaceholder ((WIN_W, WIN_H), (135, 206, 235))
+    
+birdIMG = [loadIMG('bird.png', (bird_w, bird_h))]
+    
+if not birdIMG[0]:
+    
+birdIMG = [createPlaceholder((bird_w, bird_h), COLOR_BIRD)]
+
+pipeIMG = loadIMG('bird.png', (80,500)) or createPlaceholder((80, 500), COLOR_PIPE)
+pipeImgFlipped = pg.transform.flip(pipeIMG, False, True)
+
