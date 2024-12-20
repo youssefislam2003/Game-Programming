@@ -74,4 +74,18 @@ except Exception as e:
      def _update_bird_animation(dt):
           global animation_time, current_bird_frame
           animation_time += dt
-          
+          if animation_time >= animation_speed: animation_time = 0
+          current_bird_frame = (current_bird_frame + 1) % len(birdIMG)
+
+def _update_pipes(pipe_list, scr,pipe_speed, gap_size):
+     for p in pipe_list:
+          p['x'] -= pipe_speed
+          if p['x'] < -80:
+               p['x'] = WIN_W
+               p['h'] = rnd.randint(200, 400)
+               scr += 1
+               lg.info(f"Score updated: {scr}")
+    return pipe_list, scr 
+
+
+
