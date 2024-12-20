@@ -67,4 +67,11 @@ except Exception as e:
 
      def _updatee_bird(y, vel):
           vel += gravity
+          y += vel
+          lg.debug(f"Bird updated -> Y: {y},Velocity: {vel}")
+          return y, vel
+     
+     def _update_bird_animation(dt):
+          global animation_time, current_bird_frame
+          animation_time += dt
           
