@@ -44,9 +44,18 @@ bgIMG = loadIMG('bg.png', (WIN_W, WIN_H)) or createPlaceholder ((WIN_W, WIN_H), 
 birdIMG = [loadIMG('bird.png', (bird_w, bird_h))]
     
 if not birdIMG[0]:
-    
-birdIMG = [createPlaceholder((bird_w, bird_h), COLOR_BIRD)]
+    birdIMG = [createPlaceholder((bird_w, bird_h), COLOR_BIRD)]
 
 pipeIMG = loadIMG('bird.png', (80,500)) or createPlaceholder((80, 500), COLOR_PIPE)
 pipeImgFlipped = pg.transform.flip(pipeIMG, False, True)
+
+try:
+     flapSND= pg.mixer.Sound(os.path.join(ASSETS_DIR, 'flap.wav'))
+     bgSND = pg.mixer.Sound(os.path.join(ASSETS_DIR, 'background_music.wav'))
+     bgSND.set_volume(0.05)
+     crashSND = pg.mixer.Sound(os.path.join(ASSETS_DIR, 'crash.wav'))
+     bgSND.play(-1)
+
+except Exception as e
+
 
