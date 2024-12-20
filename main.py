@@ -59,7 +59,4 @@ try:
 except Exception as e:
      flapSND = None
      bgSND = None 
-     crashSND = None
-     
-
-
+     crashSND = None      
