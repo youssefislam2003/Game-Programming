@@ -56,6 +56,10 @@ try:
      crashSND = pg.mixer.Sound(os.path.join(ASSETS_DIR, 'crash.wav'))
      bgSND.play(-1)
 
-except Exception as e
+except Exception as e:
+     flapSND = None
+     bgSND = None 
+     crashSND = None
+     
 
 
