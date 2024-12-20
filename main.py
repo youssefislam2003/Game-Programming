@@ -2,6 +2,7 @@ import pygame as pg
 import random as rnd 
 import logging as lg
 import os
+
 lg.basicConfig(level=lg.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 pg.init()
@@ -19,6 +20,17 @@ score, high_score, game_over= 0, 0, False
 
 win = pg.display.set_mode((WIN_W, WIN_H))
 pg.display.set_caption("Pharonic Flap")
+clk = pg.time.Clock()
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(__file__))
 ASSETS_DIR = os.path.join(SCRIPT_DIR, 'assets')
+
+def loadIMG(name, size):
+    path = os.path.join(ASSETS_DIR, name)
+
+    if os.path.exists(path):
+        image = pg.image.load(path)
+        return pg.transform.scale(image, size)
+    else:
+        return None
+    
