@@ -63,3 +63,8 @@ except Exception as e:
 
      current_bird = 0
      animation_speed = 0.2
+     animation_time = 0
+
+     def _updatee_bird(y, vel):
+          vel += gravity
+          
