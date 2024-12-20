@@ -34,3 +34,8 @@ def loadIMG(name, size):
     else:
         return None
     
+    def createPlaceholder(size, color):
+        surface = pg.Surface(size)
+        surface.fill(color)
+        return surface 
+    
