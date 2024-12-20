@@ -1,6 +1,7 @@
 import pygame as pg
 import random as rnd 
 import logging as lg
+import os
 lg.basicConfig(level=lg.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 pg.init()
