@@ -59,4 +59,7 @@ try:
 except Exception as e:
      flapSND = None
      bgSND = None 
-     crashSND = None      
+     crashSND = None 
+
+     current_bird = 0
+     animation_speed = 0.2
