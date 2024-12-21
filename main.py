@@ -85,7 +85,15 @@ def _update_pipes(pipe_list, scr,pipe_speed, gap_size):
                p['h'] = rnd.randint(200, 400)
                scr += 1
                lg.info(f"Score updated: {scr}")
-    return pipe_list, scr 
+     return pipe_list, scr 
 
+def _draw_all():
+     win.blit(bgIMG, (0, 0))
+
+     bird_angle = max(-30, min(bird_velocity* 2, 30))
+     rotated_bird = pg.transform.rotate(birdIMG[current_bird_frame], -bird_angle)
+     bird_rect = rotated_bird.get_rect(center=(bird_x +bird_w//2, bird_y + bird_h//2))
+     win.blit(rotated_bird, bird_rect.topleft)
+     
 
 
