@@ -104,4 +104,12 @@ def _draw_all():
           win.blit(scaled_pipe_bottom, (pipe['x'], pipe['h'] + pipe['gap']))
           
 txt_font = pg.font.Font(None, 36) 
+score_text = txt_font.render(f"Score: {score} High Score: {high_score}", True, COLOR_TEXT)
+win.blit(score_text, (10,10))
+pg.display.flip()
+
+def _draw_game_over():
+     win.blit(bgIMG, (0,0))
+     txt_font= pg.font.Font(None, 72)
+     
 
