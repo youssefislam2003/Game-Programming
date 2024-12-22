@@ -96,12 +96,12 @@ def _draw_all():
      win.blit(rotated_bird, bird_rect.topleft)
      
      for pipe in pipes:
-          scaled_pipe_top = pg.transform.scale(pipeIMGFlipped, (80, pipe['x']))
+          scaled_pipe_top = pg.transform.scale(pipeImgFlipped, (80, pipe['x']))
           win.blit(scaled_pipe_top, (pipe['x'], 0))
 
           bottom_height = WIN_H - pipe['h'] - pipe['gap']
           scaled_pipe_bottom = pg.tranform.scale(pipeIMG, (80, bottom_height))
           win.blit(scaled_pipe_bottom, (pipe['x'], pipe['h'] + pipe['gap']))
           
-
+txt_font = pg.font.Font(None, 36) 
 
