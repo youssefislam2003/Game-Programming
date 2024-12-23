@@ -115,8 +115,18 @@ def _draw_game_over():
 win.blit(game_over_text , (WIN_W // 2 - game_over_text.get_width()//2, WIN_H//3))
 score_text = txt_font.render(f"Score: {score}", True, COLOR_TEXT)
 win.blit(score_text,(WIN_W// 2- score_text.get_width()//2, WIN_H//2))
+
 btn_font = pg.font.Font(None, 48)
 btn_text = btn_font.render("Restart", True, COLOR_TEXT)
 btn_x, btn_y,btn_w, btn_h = WIN_W// 2- 100, WIN_H // 2= 100, 200, 50
+pg.draw.rect(win, COLOR_BTN, (btn_x, btn_y, btn_w, btn_h))
+win.blit (btn_text, (btn_x+ btn_w// 2 - btn_text.get_width()// 2, btn_y+ btn_h// 2- btn_text.get_height()// 2))
+pg.display.flip()
+return btn_x, btn_y, btn_w,btn_h
 
-
+def reset_game(): 
+     global bird_y, bird_velocity, pipes, score,game_over, animation_time, current_bird_frame
+     bird_y, bird_velocity  = WIN_H // 2, 0
+     pipes = [{'x': WIN_W, 'h': rnd.randiant (300,500), 'gap':300}]
+     score, game_over = 0, False 
+     animation_time, current_bird_frame = 0,0
