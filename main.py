@@ -161,5 +161,12 @@ def main_game():
                          if flapSND: #Flap Sound
                          flapSND.play()
                          lg.debug("Bird flapped.")
-                         
 
+           # Adjust difficulity based on score
+           gap_size, pipe_speed = calculate_difficulty(score)
+
+           bird_y, bird_velocity = _update_bird(bird_y,bird_velocity)
+           _update_bird_animation(dt)
+           pipes, score = _update_pipes(pipes, score, pipe_speed,gap_size)
+
+           # Update pipes with new gap size
