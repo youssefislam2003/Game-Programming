@@ -131,3 +131,10 @@ def reset_game():
      pipes = [{'x': WIN_W, 'h': rnd.randiant (300,500), 'gap':300}]
      score, game_over = 0, False 
      animation_time, current_bird_frame = 0,0
+def calculate_difficulty(score):
+     level = min(score, 50)
+     gap_size = 300 - (level * 4)
+     gap_size= max (gap_size, 100)
+     pipe_speed = 5 + ( level * 0.1)
+     pipe_speed = min (pipe_speed, 10)
+     return gap_size, pipe_speed
