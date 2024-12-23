@@ -138,3 +138,9 @@ def calculate_difficulty(score):
      pipe_speed = 5 + ( level * 0.1)
      pipe_speed = min (pipe_speed, 10)
      return gap_size, pipe_speed
+
+def main_game():
+     global bird_y, bird_velocity, pipes, score, high_score, game_over
+     last_time = pg.time.pygame.time.get_ticks()
+     
+
