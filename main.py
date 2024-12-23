@@ -149,3 +149,9 @@ def main_game():
                dt = (current_time - last_time) / 1000.0
                last_time = current_time
 
+               for ev in pg.event.get():
+                    if ev.type == pg.quit
+                       lg.info("Game exited by user.")
+                       pg.quit()
+                       exit()
+                       
