@@ -185,5 +185,17 @@ def main_game():
 
           _draw_all()
           clk.tick(FPS)
-          
+
+          #Game Over Logic
+          btn_x, btn_y, btn_w, btn_h = _draw_game_over()
+           for ev in pg.event.get():
+               if ev.type = pg.Quit:
+                    lg.info("Game exited by user.")
+                    pg.quit()
+                    exit()
+               if ev.type == pg.MOUSEBUTTONDOWN:
+                    mx, my = pg.mouse.pygame.mouse.get_pos()
+               if btn_x <= mx <= btn_x + btn_w and btn_y <
+
+
 
