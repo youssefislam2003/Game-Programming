@@ -177,4 +177,11 @@ def main_game():
            for p in pipes:
                if(bird_x < p['x'] + 80 and bird_x + bird_w > p['x'] and
                not (p['h'] < bird_y < p['h'] + p['gap'])) or bird_y + bird_h > WIN_H or bird_y < 0:
-               
+          if crashSND: #Crash Sound
+          crashSND.play()
+          game_over = True
+          high_score = max(high_score, score)  
+          lg.error("Collison detected, Game Over!")
+
+          _draw_all()
+          
