@@ -143,4 +143,9 @@ def main_game():
      global bird_y, bird_velocity, pipes, score, high_score, game_over
      last_time = pg.time.pygame.time.get_ticks()
      
+     while True:
+          while not game_over:
+               current_time = pg.time.get_ticks()
+               dt = (current_time - last_time) / 1000.0
+               last_time = current_time
 
