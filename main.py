@@ -170,3 +170,11 @@ def main_game():
            pipes, score = _update_pipes(pipes, score, pipe_speed,gap_size)
 
            # Update pipes with new gap size
+            for p in pipes:
+               p['gap'] = gap_size
+
+          #Check for collisons
+           for p in pipes:
+               if(bird_x < p['x'] + 80 and bird_x + bird_w > p['x'] and
+               not (p['h'] < bird_y < p['h'] + p['gap'])) or bird_y + bird_h > WIN_H or bird_y < 0:
+               
