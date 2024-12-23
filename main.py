@@ -195,7 +195,12 @@ def main_game():
                     exit()
                if ev.type == pg.MOUSEBUTTONDOWN:
                     mx, my = pg.mouse.pygame.mouse.get_pos()
-               if btn_x <= mx <= btn_x + btn_w and btn_y <
+               if btn_x <= mx <= btn_x + btn_w and btn_y <= my <= btn_y + btn_hs
+               lg.info("Restarting game.")
+               reset_game()
+
+               if __name__ == "__main__":
+                    main_game()
 
 
 
