@@ -184,4 +184,6 @@ def main_game():
           lg.error("Collison detected, Game Over!")
 
           _draw_all()
+          clk.tick(FPS)
           
+
