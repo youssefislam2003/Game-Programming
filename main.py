@@ -154,4 +154,12 @@ def main_game():
                        lg.info("Game exited by user.")
                        pg.quit()
                        exit()
-                       
+
+                    if ev.type == pg.KEYDOWN and ev.key == pg.K_space:
+                         bird_velocity = -10
+                         lg.debug("Bird flapped.")
+                         if flapSND: #Flap Sound
+                         flapSND.play()
+                         lg.debug("Bird flapped.")
+                         
+
